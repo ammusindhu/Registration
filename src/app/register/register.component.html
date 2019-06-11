@@ -1,0 +1,29 @@
+<div class="content-agileits">
+  <h1 class="title">student registration Form</h1>
+  <div class="left">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
+
+      <div class="form-row mb-4">
+        <div class="col">
+          <input type="text" formControlName="firstName" id="firstname" class="form-control" placeholder="First name"
+            (keypress)="alphabatOnly($event)">
+        </div>
+        <div class="col">
+          <input type="text" formControlName="lastName" id="lastname" class="form-control" placeholder="Last name"
+            (keypress)="alphabatOnly($event)">
+        </div>
+      </div>
+
+      <input type="text" formControlName="class" id="class" class="form-control mb-4" placeholder="Enter Class"
+        (keypress)="numberalphaOnly($event)">
+      <input type="date" formControlName="yop" id="yop" class="form-control mb-4" [(ngModel)]="yearpass"
+        placeholder="Enter Year Of Passing">
+      <input type="text" formControlName="permarks" id="permarks" class="form-control mb-4"
+        placeholder="Enter Percentage Of Marks" (keypress)="numberOnly($event)">
+
+      <div class="form-group">
+        <button type="submit" class="button button3 my-4 btn-block">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
